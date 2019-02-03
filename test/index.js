@@ -92,6 +92,31 @@
 
  // Print the results using the below function
  _app.produceTestReport = (limit, successes, errors) => {
+    console.log("");
+    console.log("----------BEGIN TEST REPORT----------");
+    console.log("");
+    console.log("Total Tests: ", limit);
+    console.log("Pass: ", successes);
+    console.log("Fail: ", errors.length);
+    console.log("");
+
+    // If there errors print them in detail and only print when there is an error
+    if(errors.length > 0){
+        console.log("----------BEGIN ERROR REPORT----------");
+        console.log("");
+        errors.forEach( error => {
+            console.log("\x1b[31m%s\x1b[0m", error.name);
+            console.log(error.error);
+            console.log("");
+        });
+        console.log("");
+        console.log("----------END ERROR REPORT----------");
+
+    }
+    console.log("");
+    console.log("----------END TEST REPORT--------");
+    process.exit(0)
+
 
  }
 
