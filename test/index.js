@@ -72,7 +72,7 @@
                            console.log('\x1b[31m%s\x1b[0m', tmpTestName);
                            counter++
                            if(counter === limit){
-                               _app.produceTestReport(limit, successes, errora)
+                               _app.produceTestReport(limit, successes, errors)
                            }
 
                        }
@@ -122,4 +122,4 @@
 
 
  // Run tests
- _appTests();
+ _app.runTests();

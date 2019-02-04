@@ -4,13 +4,16 @@
  * 
  */
 
- module.exports = {
 
-     factorial = (num) => {
+ // Hold functions
+ const lib = {}
+
+
+     lib.factorial = (num) => {
 
         num = typeof(num) === 'number' && num >= 0 ? num : false; 
 
-        if(num){
+        if(num || num === 0){
 
             if(num === 0 || num === 1) return 1;
             
@@ -25,9 +28,9 @@
             return -1;
         }
 
-    },
+    };
 
-    reverseString = (str) => {
+    lib.reverseString = (str) => {
         str = typeof(str) === 'string' && str.trim().length > 0 ? str : false;
 
         if(str){
@@ -45,8 +48,9 @@
 
             return false;
         }
-    },
-    multipleTwoNumbers(num1, num2){
+    };
+
+    lib.multipleTwoNumbers = (num1, num2) => {
         num1 = typeof(num1) === 'Number' ? num1 : false;
         num2 = typeof(num2) === 'Number'? num2 : false;
 
@@ -57,6 +61,26 @@
 
             return false;
         }
-    }
+    };
 
- }
+    lib.palindrome = (str) =>{
+        const copyStr = str;
+        let reverseStr = [];
+
+        const strArray = str.split("");
+
+        for(let i = str.length - 1; i >= 0; i--){
+            reverseStr.push(strArray[i])
+        }
+
+        reverseStr = reverseStr.join("");
+
+        if(reverseStr === copyStr){
+            return true;
+        } else {
+            return false;
+        }
+
+    };
+
+ module.exports = lib;
