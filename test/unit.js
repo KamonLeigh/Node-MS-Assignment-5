@@ -60,7 +60,7 @@
  }
 
  // Assert that palindrome fn is case sensitive
- unit['palindrome fn should fail if palindrome if uppercase is not mirrored'] = done => {
+ unit['palindrome fn should fail if palindrome if uppercase cannot be not mirrored'] = done => {
      const str = 'Level';
      assert.ok(typeof str === 'string');
      const result = palindrome(str);

@@ -8,7 +8,7 @@
  // Hold functions
  const lib = {}
 
-
+    // Factorial - returns factorial of a given number. If input is not valid -1 is returned
      lib.factorial = (num) => {
 
         num = typeof(num) === 'number' && num >= 0 ? num : false; 
@@ -29,7 +29,7 @@
         }
 
     };
-
+    // reverseString- takes string as an input snd reverses returns false if string is invalid
     lib.reverseString = (str) => {
         str = typeof(str) === 'string' && str.trim().length > 0 ? str : false;
 
@@ -50,6 +50,7 @@
         }
     };
 
+    // multipleTwoNumbers takes two numbers as input and multiplies them together
     lib.multipleTwoNumbers = (num1, num2) => {
         num1 = typeof(num1) === 'number' ? num1 : false;
         num2 = typeof(num2) === 'number'? num2 : false;
@@ -63,6 +64,7 @@
         }
     };
 
+    // palindrome checks if string is a palindrome 'true' is returned otherwise message is returned
     lib.palindrome = (str) =>{
         str = typeof(str) === 'string' && str.trim().length > 0 ? str : false;
 
@@ -91,4 +93,6 @@
 
     };
 
+
+// Export functions
  module.exports = lib;
